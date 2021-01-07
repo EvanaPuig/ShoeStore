@@ -6,4 +6,6 @@
     <string name="login_placeholder_edit_text_email">email@youremail.com</string>
     <string name="login_label_password">Enter your password:</string>
     <string name="login_placeholder_password">******</string>
+    <string name="login_button_log_in">Login</string>
+    <string name="login_button_create_account">Create Account</string>
 </resources>
