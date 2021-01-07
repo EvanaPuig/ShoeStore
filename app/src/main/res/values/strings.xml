@@ -15,5 +15,9 @@
     <string name="welcome_go_to_instructions_button_text">Go to instructions</string>
 
     <!-- Instructions -->
+    <string name="instructions_title">Instructions</string>
+    <string name="instructions_description">Here goes the text that explains how to buy shoes</string>
+    <string name="instructions_button">Start Shopping</string>
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
