@@ -8,4 +8,12 @@
     <string name="login_placeholder_password">******</string>
     <string name="login_button_log_in">Login</string>
     <string name="login_button_create_account">Create Account</string>
+
+    <!-- Welcome -->
+    <string name="welcome_title">Welcome</string>
+    <string name="welcome_description">This is our shoe store</string>
+    <string name="welcome_go_to_instructions_button_text">Go to instructions</string>
+
+    <!-- Instructions -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

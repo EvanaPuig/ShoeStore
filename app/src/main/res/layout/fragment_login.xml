@@ -7,14 +7,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/login_layout_padding">
+        android:padding="@dimen/layout_padding">
 
         <TextView
             android:id="@+id/email_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/login_label_email"
-            android:paddingTop="@dimen/login_items_padding_top"
+            android:paddingTop="@dimen/items_padding_top"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/login_label_password"
-            android:paddingTop="@dimen/login_items_padding_top"
+            android:paddingTop="@dimen/items_padding_top"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/email_input" />
@@ -55,7 +55,7 @@
             android:id="@+id/login_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/login_button_margin_top"
+            android:layout_marginVertical="@dimen/button_margin_top"
             android:text="@string/login_button_log_in"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -65,7 +65,7 @@
             android:id="@+id/register_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/login_button_margin_top"
+            android:layout_marginVertical="@dimen/button_margin_top"
             android:text="@string/login_button_create_account"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

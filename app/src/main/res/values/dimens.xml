@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="login_layout_padding">50dp</dimen>
-    <dimen name="login_items_padding_top">20dp</dimen>
-    <dimen name="login_button_margin_top">20dp</dimen>
+    <dimen name="layout_padding">50dp</dimen>
+    <dimen name="items_padding_top">20dp</dimen>
+    <dimen name="button_margin_top">20dp</dimen>
 </resources>
