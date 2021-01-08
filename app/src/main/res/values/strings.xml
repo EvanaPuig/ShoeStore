@@ -2,6 +2,7 @@
     <string name="app_name">ShoeStore</string>
 
     <!-- Login -->
+    <string name="login_title">Login</string>
     <string name="login_label_email">Enter your email address:</string>
     <string name="login_placeholder_edit_text_email">email@youremail.com</string>
     <string name="login_label_password">Enter your password:</string>
