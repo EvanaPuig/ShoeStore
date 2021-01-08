@@ -10,15 +10,40 @@
         android:padding="@dimen/layout_padding">
 
         <TextView
-            android:id="@+id/instructions_title"
+            android:id="@+id/shoe_list_title"
+            style="@style/TextAppearance.AppCompat.Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/TextAppearance.AppCompat.Title"
-            android:text="Shoe List"
             android:paddingTop="@dimen/items_padding_top"
-            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/shoe_list_title"
+            app:layout_constraintBottom_toTopOf="@+id/shoe_list_scroll_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:id="@+id/shoe_list_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_list_title"
+            tools:layout_editor_absoluteX="50dp">
+
+            <LinearLayout
+                android:id="@+id/shoe_list_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+          android:id="@+id/shoe_list_detail_button"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:src="@android:drawable/ic_dialog_info"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
