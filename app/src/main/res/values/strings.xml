@@ -21,4 +21,7 @@
 
     <!-- Shoe List -->
     <string name="shoe_list_title">Shoe List</string>
+
+    <!-- Others -->
+    <string name="logout_button">Log Out</string>
 </resources>
