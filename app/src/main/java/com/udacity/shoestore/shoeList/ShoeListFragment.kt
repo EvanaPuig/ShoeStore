@@ -4,19 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import timber.log.Timber
 
-
 class ShoeListFragment : Fragment() {
+    private val viewModel: ShoeListViewModel by activityViewModels()
     private var _binding: FragmentShoeListBinding? = null
     private val binding get() = _binding!!
     private val args: ShoeListFragmentArgs by navArgs()
@@ -31,6 +32,25 @@ class ShoeListFragment : Fragment() {
             navigateToDetailFragment(it)
         }
 
+        binding.shoeListViewModel = viewModel
+        binding.lifecycleOwner = this
+
+        viewModel.listOfShoes.observe(viewLifecycleOwner, { listOfShoes ->
+            for( shoe in listOfShoes) {
+                val myLayout: LinearLayout = binding.shoeListLinearLayout
+
+                val newShoeView = TextView(context)
+                newShoeView.layoutParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.MATCH_PARENT
+                )
+
+                newShoeView.text = getString(R.string.shoe_item, shoe.name, shoe.company, shoe.size.toString(), shoe.description)
+
+                myLayout.addView(newShoeView)
+            }
+        })
+
         val activity = activity as AppCompatActivity
         activity.supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
@@ -38,16 +58,7 @@ class ShoeListFragment : Fragment() {
         Timber.d("newShoe received: $newShoe")
 
         if (newShoe != null) {
-            val myLayout: LinearLayout = binding.shoeListLinearLayout
-
-            val newShoeView = TextView(context)
-            newShoeView.layoutParams = LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.MATCH_PARENT)
-
-            newShoeView.text = getString(R.string.shoe_item, newShoe.name, newShoe.company, newShoe.size.toString(), newShoe.description)
-
-            myLayout.addView(newShoeView)
+            viewModel.addShoe(newShoe)
         }
 
         return binding.root
