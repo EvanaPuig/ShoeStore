@@ -32,7 +32,7 @@ class InstructionsFragment : Fragment() {
   }
 
   private fun navigateToShoeListScreen(view: View) {
-    val navigationAction = InstructionsFragmentDirections.actionInstructionsFragmentToShoeListFragment(null)
+    val navigationAction = InstructionsFragmentDirections.actionInstructionsFragmentToShoeListFragment()
     view.findNavController().navigate(navigationAction)
   }
 }

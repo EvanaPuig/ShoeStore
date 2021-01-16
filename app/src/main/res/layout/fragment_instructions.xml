@@ -4,10 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".InstructionsFragment">
 
-  <androidx.constraintlayout.widget.ConstraintLayout
+  <!-- Here the layout chosen was a LinearLayout because the view
+        is relatively simple and just has 3 items one below the other-->
+  <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:padding="@dimen/layout_padding">
+      android:padding="@dimen/layout_padding"
+      android:orientation="vertical">
 
     <TextView
         android:id="@+id/instructions_title"
@@ -15,30 +18,21 @@
         android:layout_height="wrap_content"
         style="@style/TextAppearance.AppCompat.Title"
         android:text="@string/instructions_title"
-        android:paddingTop="@dimen/items_padding_top"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:paddingTop="@dimen/items_padding_top"/>
 
     <TextView
         android:id="@+id/instructions_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/instructions_description"
-        android:paddingTop="@dimen/items_padding_top"
-        app:layout_constraintTop_toBottomOf="@id/instructions_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:paddingTop="@dimen/items_padding_top"/>
 
     <Button
         android:id="@+id/instructions_go_shopping_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="@dimen/button_margin_top"
-        android:text="@string/instructions_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/instructions_description"/>
+        android:text="@string/instructions_button"/>
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+  </LinearLayout>
 </layout>

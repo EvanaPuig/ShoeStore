@@ -6,9 +6,14 @@
 
     <data>
         <variable
-          name = "shoeListViewModel"
+          name = "viewModel"
           type = "com.udacity.shoestore.shoeList.ShoeListViewModel"/>
     </data>
+
+    <!-- Here the layout chosen was a ConstraintLayout,
+    because this has a bit more of a complex UI having the
+    floating button and the title in the top center -->
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

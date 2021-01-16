@@ -9,18 +9,15 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.navArgs
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
-import timber.log.Timber
 
 class ShoeListFragment : Fragment() {
     private val viewModel: ShoeListViewModel by activityViewModels()
     private var _binding: FragmentShoeListBinding? = null
     private val binding get() = _binding!!
-    private val args: ShoeListFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,7 +29,6 @@ class ShoeListFragment : Fragment() {
             navigateToDetailFragment(it)
         }
 
-        binding.shoeListViewModel = viewModel
         binding.lifecycleOwner = this
 
         viewModel.listOfShoes.observe(viewLifecycleOwner, { listOfShoes ->
@@ -53,13 +49,6 @@ class ShoeListFragment : Fragment() {
 
         val activity = activity as AppCompatActivity
         activity.supportActionBar?.setDisplayHomeAsUpEnabled(false)
-
-        val newShoe = args.shoe
-        Timber.d("newShoe received: $newShoe")
-
-        if (newShoe != null) {
-            viewModel.addShoe(newShoe)
-        }
 
         return binding.root
     }
